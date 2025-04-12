@@ -4,6 +4,24 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "s3_bucket_name" {
+  description = "Name of the S3 bucket that triggers the Lambda function"
+  type        = string
+  default     = "my-lambda-trigger-bucket"
+}
+
+variable "s3_filter_prefix" {
+  description = "Optional prefix filter for S3 events (e.g., 'uploads/')"
+  type        = string
+  default     = ""
+}
+
+variable "s3_filter_suffix" {
+  description = "Optional suffix filter for S3 events (e.g., '.jpg')"
+  type        = string
+  default     = ""
+}
+
 variable "lambda_function_name" {
   description = "Name of the Lambda function"
   type        = string
